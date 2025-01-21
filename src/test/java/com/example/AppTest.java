@@ -1,38 +1,53 @@
 package com.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    private static Calculator calculator;
+
+    @BeforeAll
+    static void setUp(){
+        calculator = new Calculator();
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    void addSimple(){
+        double result = calculator.calculate(1,1,'+');
+        assertEquals(2,result);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertEquals(5,2+3);
+    @Test
+    void multiplySimple(){
+        double result = calculator.calculate(1,1,'*');
+        assertEquals(1,result);
     }
+
+    @Test
+    void subtractSimple(){
+        double result = calculator.calculate(1,1,'-');
+        assertEquals(0,result);
+    }
+
+    @Test
+    void divideSimple(){
+        double result = calculator.calculate(1,1,'/');
+        assertEquals(1,result);
+    }
+
+    // //.....
+    // @Test
+    // void illegalArgument() {
+    //     Assertions.assertThrows(IllegalArgumentException.class, () -> calculator.calculate(1, 1, '/'));
+    // }
+
+    // @Test
+    // void divideByZero() {
+    //     Assertions.assertThrows(IllegalArgumentException.class, () -> calculator.calculate(1, 0, ':'));
+    // }
 }
