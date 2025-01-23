@@ -1,4 +1,4 @@
-package com.example;
+package com.javapoint;
 
 public class Calculator {
     public double calculate(double a, double b, char operator) {
