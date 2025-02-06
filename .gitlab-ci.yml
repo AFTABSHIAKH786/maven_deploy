@@ -1,0 +1,29 @@
+image: maven
+
+stages:
+  - clean
+  - compile
+  - test
+  - package
+  - deploy
+
+
+clean_project:
+  stage: clean
+  script: mvn clean
+
+compile_project:
+  stage: compile
+  script: mvn compile
+
+test_project:
+  stage: test
+  script: mvn test
+
+package_project:
+  stage: package
+  script: mvn package
+
+deploy_project:
+  script: 
+    - echo "Deployed success"
