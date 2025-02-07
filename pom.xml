@@ -34,6 +34,7 @@
         <sonar.coverage.jacoco.xmlReportPaths>
             ../app-it/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.organization>practice3735711</sonar.organization>
     </properties>
     <distributionManagement>
         <repository>
